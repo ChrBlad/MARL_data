@@ -203,13 +203,13 @@ df_zone1['Tamb']=df_zone1['Tamb']-273.15
 #df_actions['Reward']=df_actions['Reward']#+df_actions['Hardcon']#-df_actions['price_reward']#+df_zone1['Reward']+df_zone3['Reward']+df_zone4['Reward']+df_zone2['Reward']#+df_actions['Hardcon']#+df_zone2['Reward']
 #df_actions_com['Reward']=df_actions_com['Reward']-df_zone2_com['Reward']-df_zone3_com['Reward']-df_zone4_com['Reward']-df_zone1_com['Reward']#+df_zone2_com['Reward']
 #["Valve1", "Supplytemp","Reward","Hardcon","price_reward","sum_mix_reward","change_in_Supply_temp"]
-df_actions['Reward']=df_actions['Reward']+df_actions['Hardcon']+0.3#+df_zone1['Reward']#-df_zone1['Hcv']#+df_zone2['Reward']+df_zone3['Reward']+df_zone4['Reward']#+df_actions['Hardcon']#+df_zone2['Reward']
-df_actions_com['Reward']=df_actions_com['Reward']+df_actions_com['Hardcon']-df_zone1_com['Reward']#-df_zone1_com['Hcv']#-df_zone2_com['Reward']-df_zone1_com['Reward']-df_zone3_com['Reward']-df_zone4_com['Reward']#-df_actions_com['price_reward']#+df_zone2_com['Reward']
-#df_actions['Reward']=df_actions['Reward']-df_actions_com['Reward']
-
+#plus 3 is add to compensate for not including price reward 
+df_actions['Reward']=df_actions['Reward']+df_actions['Hardcon']-df_actions["price_reward"]+3#+df_zone1['Reward']#-df_zone1['Hcv']#+df_zone2['Reward']+df_zone3['Reward']+df_zone4['Reward']#+df_actions['Hardcon']#+df_zone2['Reward']
+df_actions_com['Reward']=df_actions_com['Reward']+df_actions_com['Hardcon']-df_zone1_com['Reward']-df_actions_com["price_reward"]+3
 #df_actions_com['Reward']=df_actions_com['Reward']-df_actions_com['Reward']
 
 #df_zone1_com['Valve']=df_zone1_com['Valve']+16
+df_zone1_ref['Troom']=df_zone1_ref['Troom']-273.15
 df_zone1_com['Troom']=df_zone1_com['Troom']-273.15
 df_zone1_com['Tamb']=df_zone1_com['Tamb']-273.15
 
