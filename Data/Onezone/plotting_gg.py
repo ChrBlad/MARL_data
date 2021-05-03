@@ -542,8 +542,9 @@ def Evaluation_of_price(m_pr,n_pr,SS,n_pr_ref,m_pr_ref,df_zone1,df_zone1_com,pri
 
 f1 = plt.figure(1)
 plt.style.use('ggplot')
-plt.plot(df_zone1['time'],df_zone1['Troom'],label='RL', alpha=0.7)
-plt.plot(df_zone1_com['time'],df_zone1_com['Troom'],label='hys control ref', alpha=0.7)
+plt.plot(df_zone1['time'],df_zone1['Troom'],label='MARL', alpha=0.7)
+plt.plot(df_zone1_ref['time'],df_zone1_ref['Troom'],label='hys control ref', alpha=0.7)
+plt.plot(df_zone1_com['time'],df_zone1_com['Troom'],label='SARL', alpha=0.7)
 #plt.plot(df_zone1['time'],df_zone1['action']-5,label='action', alpha=0.7)
 #plt.plot(df_zone1['time'],df_zone1['Reward'],label='Hardconstraint', alpha=0.7)
 #plt.plot(df_zone1['time'],df_zone1['Valve']+15,label='Valve pos after hard', alpha=0.7)
@@ -552,93 +553,11 @@ plt.ylabel('Temperature[C]')
 plt.xlabel('Time[Days]')
 plt.legend()
 
-
-
-
-
-
-
-
-
-
-
-# plt.legend()
-
-f5 = plt.figure(5)
-plt.style.use('ggplot')
-#plt.plot(df_zone1['time'],df_actions['Reward'],label='RL mix', alpha=0.7)
-#plt.plot(df_zone1['time'],df_actions['Reward']-df_actions['sum_mix_reward']-df_actions['change_in_Supply_temp']+df_actions['Hardcon']-15,label='supply', alpha=0.7)
-plt.plot(df_zone1['time'],df_actions['Hardcon']-15,label='Hard_con', alpha=0.7)
-#plt.plot(df_zone1['time'],df_actions['price_reward'],label='Price_reward', alpha=0.7)
-plt.plot(df_zone1['time'],df_actions['sum_mix_reward'],label='sum mix', alpha=0.7)
-plt.plot(df_zone1['time'],df_actions['change_in_Supply_temp'],label='change in supply', alpha=0.7)
-# plt.plot(df_zone1_com['time'],df_zone1_com['Power'],label='RL zone 1', alpha=0.7)
-plt.ylabel('Reward[C]')
-plt.xlabel('Time[Days]')
-
-
-
-# f6 = plt.figure(6)
-# plt.style.use('ggplot')
-# plt.plot(df_zone4['time'],df_actions['Reward'],label='RL', alpha=0.7)
-# plt.plot(df_zone4_com['time'],df_actions_com['Reward'],label='hys control ref', alpha=0.7)
-# # plt.plot(df_zone1['time'],df_actions['Hardcon'],label='Hardconstraint', alpha=0.7)
-# # plt.plot(df_zone1['time'],df_zone1['Valve'],label='Valve pos', alpha=0.7)
-# # plt.plot(df_zone1_com['time'],df_zone1_com['Valve'],label='Valve ref pos', alpha=0.7)
-# plt.ylabel('Temperature[C]')
-# plt.xlabel('Time[Days]')
-# plt.legend()
-
-
-
-
-# plt.legend()
-
-#Evaluation_of_power1(m_p,n_p,SS,n_p_ref,m_p_ref,df_zone1,df_zone1_com,power20,power20_ref,number)
-# Evaluation_of_power(m_p,n_p,SS,n_p_ref,m_p_ref,df_zone1,df_zone1_com,power20,power20_ref,number)
-#Evaluation_of_reward(m,n,SS,n_ref,m_ref,df_zone2,df_zone2_com,reward20,reward20_ref,number,4)
-#(self,m,n,SS,n_ref,m_ref,df_actions,df_actions_com,supplytemp20,reward20_ref,number,fig_num):
-#Evaluation_of_supplytemp(m,n,SS,n_ref,m_ref,df_actions_com,df_actions_com,supplytemp20,number=number,fig_num=7)
-#Evaluation_of_reward(m,n,SS,n_ref,m_ref,df_actions,df_actions_com,reward20,reward20_ref,number,6)
-#Evaluation_of_duty_cycle(m,n,SS,n_ref,m_ref,df_actions,df_zone2_com,Valves20,Valves20_ref,number,10)
-
-Evaluation_of_supplytemp(m,n,SS_action,n_ref,m_ref,df_actions,df_actions_com,supplytemp20,supplytemp20_ref,number,7)
-
-# Evaluation_of_Roomtemp(m_t,n_t,SS,n_t_ref,m_t_ref,df_zone1,df_zone1_com,temp20,temp20_ref,number,9)
-# Evaluation_of_Roomtemp(m_t,n_t,SS,n_t_ref,m_t_ref,df_zone2,df_zone2_com,temp20,temp20_ref,number,10)
-# Evaluation_of_Roomtemp(m_t,n_t,SS,n_t_ref,m_t_ref,df_zone3,df_zone3_com,temp20,temp20_ref,number,11)
-# Evaluation_of_Roomtemp(m_t,n_t,SS,n_t_ref,m_t_ref,df_zone4,df_zone4_com,temp20,temp20_ref,number,12)
-
-# Evaluation_of_error(m,n,SS,n_ref,m_ref,df_zone1,df_zone1_com,error20,error20_ref,number,15)
-# Evaluation_of_error(m,n,SS,n_ref,m_ref,df_zone2,df_zone2_com,error20,error20_ref,number,16)
-# Evaluation_of_error(m,n,SS,n_ref,m_ref,df_zone3,df_zone3_com,error20,error20_ref,number,17)
-# Evaluation_of_error(m,n,SS,n_ref,m_ref,df_zone4,df_zone4_com,error20,error20_ref,number,18)
-
-#Evaluation_of_reward(m,n,SS,n_ref,m_ref,df_zone1,df_zone1_com,reward20,reward20_ref,number,22)
-#Evaluation_of_reward(m,n,SS,n_ref,m_ref,df_zone2,df_zone2_com,reward20,reward20_ref,number,23)
-#Evaluation_of_reward(m,n,SS,n_ref,m_ref,df_zone3,df_zone3_com,reward20,reward20_ref,number,24)
-#Evaluation_of_reward(m,n,SS,n_ref,m_ref,df_zone4,df_zone4_com,reward20,reward20_ref,number,25)
-#Evaluation_of_reward(m,n,SS,n_ref,m_ref,df_actions,df_actions_com,reward20,reward20_ref,number,26)
 Evaluation_of_reward(m,n,SS,n_ref,m_ref,n_ref_1,m_ref_1,df_actions,df_actions_com,df_actions_ref,reward20,reward20_ref,reward20_ref_1,number_n,26)
 
-Evaluation_of_price(m_pr,n_pr,SS,n_pr_ref,m_pr_ref,df_zone1,df_zone1_com,price20,price20_ref,number,30)
 
 
-Evaluation_of_duty_cycle(m,n,SS,n_ref,m_ref,df_zone1,df_zone1_com,Valves20,Valves20_ref,number,40)
 
-
-# plt.figure(44)
-# df_zone1['Troom'][30000:SS].plot.hist(bins=50, alpha=0.5)
-# df_zone1_com['Troom'][30000:SS].plot.hist(bins=50, alpha=0.5)
-# plt.figure(55)
-# df_zone2['Troom'][30000:SS].plot.hist(bins=50, alpha=0.5)
-# df_zone2_com['Troom'][30000:SS].plot.hist(bins=50, alpha=0.5)
-# plt.figure(66)
-# df_zone3['Troom'][30000:SS].plot.hist(bins=50, alpha=0.5)
-# df_zone3_com['Troom'][30000:SS].plot.hist(bins=50, alpha=0.5)
-# plt.figure(77)
-# df_zone4['Troom'][30000:SS].plot.hist(bins=50, alpha=0.5)
-# df_zone4_com['Troom'][30000:SS].plot.hist(bins=50, alpha=0.5)
 plt.show()
 
 
