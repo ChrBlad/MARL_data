@@ -1,0 +1,3 @@
+This folder contains the code used to produce the results presented in article " Data-Driven Offline Reinforcement Learning for HVAC-Systems". 
+The models have been pre-built for the conveience the models in scenario A is based on 60 days of data and the models in scenario B is based on 300 days of data.
+The script for building models is located in the folder " model_built"
